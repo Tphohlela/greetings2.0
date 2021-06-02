@@ -20,7 +20,6 @@ function errors(name,langValue){
     else return null;
 }
 
-
     function greetings1(name,langValue) {
         var name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
@@ -47,8 +46,6 @@ function errors(name,langValue){
 
     }
 
-
-
     function addNames(name,langValue) {
         if (name === "" || name == Number(name)){
             namesGreeted2[name];
@@ -60,8 +57,6 @@ function errors(name,langValue){
         }
     }
 
-
-
     function getNames() {
         return namesGreeted;
     }
@@ -70,9 +65,6 @@ function errors(name,langValue){
     function getCount() {
         return Object.keys(namesGreeted).length;
     }
-
-
-
 
     return {
         addNames,

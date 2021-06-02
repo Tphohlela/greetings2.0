@@ -5,8 +5,6 @@ var counterRef = document.querySelector(".counter1")
 var emptyStringRef = document.querySelector(".greetingAndName1");
 var resetBtnRef = document.querySelector(".resetBtn")
 
-
-
 var count = 0;
 
 var dataFromLocal
@@ -17,16 +15,12 @@ if (localStorage['names']) {
 }
 var namesGreeted = dataFromLocal;
 
-
 var retrievedCount;
 var greetingsInstance = greetings(dataFromLocal);
 var retrievedNames;
 
-
 myVar;
 counterRef.innerHTML = greetingsInstance.getCount();
-
-
 
 function clearTextArea() {
 
@@ -52,7 +46,7 @@ function myFunction() {
     myVar = setTimeout(function () {
         emptyStringRef.innerHTML = null;
     }
-        , 3000);
+        , 2000);
 }
 
 
@@ -62,13 +56,7 @@ function greet() {
     
     var radioBtnEng = document.querySelector("input[name='langRadioBtn']:checked");
 
-
-
     nameString.value = null;    
-  
-   
-
-
    
     if (!radioBtnEng){
         
@@ -78,7 +66,6 @@ function greet() {
        
     }
 
-
     if (radioBtnEng) {
        
         var langValue = radioBtnEng.value;
@@ -87,8 +74,6 @@ function greet() {
         emptyStringRef.classList.add('danger');  
      emptyStringRef.innerHTML = greetingsInstance.errors(name,langValue);
      
-
-       
         helloPlusName.innerHTML = greetingsInstance.greetings1(name,langValue)
         localStorage['names'] = JSON.stringify(namesGreeted);
         var list = Object.keys(dataFromLocal).length;
@@ -96,10 +81,6 @@ function greet() {
         
     }
 }
-
-
-
-
 
 function reset() {
     count1 = 0;
@@ -110,12 +91,9 @@ function reset() {
     localStorage['spot'] = 0;
     location.reload();
 
-
-
     clearGreetingArea();
     clearEmptyStringArea();
 }
-
 
 buttonForGreetMe.addEventListener('click', greet);
 resetBtnRef.addEventListener('click', reset);

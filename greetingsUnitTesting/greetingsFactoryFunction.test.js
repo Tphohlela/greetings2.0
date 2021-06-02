@@ -61,7 +61,7 @@ describe('Greetings factory function', function () {
         });
     });
 
-    describe(' radio button selected not selected', function () {
+    describe(' radio button not selected', function () {
         it('should return "please choose language" if radio button is not selected', function () {
             let greetings2 = greetings();
 
