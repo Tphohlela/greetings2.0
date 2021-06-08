@@ -25,25 +25,25 @@ function errors(name,langValue){
 
         addNames(name,langValue)
         errors(name,langValue)
-        
+         successGreeting(name)
+    
 
-         if (name === "" || name == Number(name)) {
+        if (name === "" || name == Number(name)|| name.includes()) {
             return null;
     
         }
 
-        else if (langValue === "English") {
+      
+        if (langValue === "English") {
             return 'Hello, ' + name;
 
         } else if (langValue === "Afrikaans") {
-            return 'Hallo, ' + name;
-
+            return 'Hallo, ' + name ;
+            
         } else if (langValue === "isiXhosa") {
-            return 'Molo, ' + name;
+            return 'Molo, ' + name  ;
         }
-
-
-
+       
     }
 
     function addNames(name,langValue) {
@@ -61,6 +61,16 @@ function errors(name,langValue){
         return namesGreeted;
     }
 
+    function successGreeting(name){
+        if(name == null || name == Number(name)){
+            return null;
+        }
+        else {
+
+            return  "You have been succesfully greeted :)"; 
+       
+        }
+    }
 
     function getCount() {
         return Object.keys(namesGreeted).length;
@@ -72,6 +82,6 @@ function errors(name,langValue){
         errors,
         getNames,
         getCount,
-         
+        successGreeting,    
     }
 }

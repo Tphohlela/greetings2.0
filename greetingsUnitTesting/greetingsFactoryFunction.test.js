@@ -77,6 +77,33 @@ describe('Greetings factory function', function () {
         });
     });
 
+    describe('success greeting message', function () {
+        it('should return "you have been greeted sucessfully"', function () {
+            let greetings2 = greetings();
+
+            assert.equal("You have been succesfully greeted :)", greetings2.successGreeting("Thato","English"));
+        });
+
+        it('should not return "you have been greeted sucessfully" because an empty input has been entered', function () {
+            let greetings2 = greetings();
+
+            assert.equal(null, greetings2.successGreeting("","English"));
+        });
+
+        // it('should return "you have already been greeted"', function () {
+        //     let greetings2 = greetings();
+
+        //     assert.equal("Hello, Thato", greetings2.greetings1("Thato","English"));
+        //     assert.equal("Hallo, Thato", greetings2.greetings1("Thato","Afrikaans"));
+
+        //     assert.equal("You have been succesfully greeted :)", greetings2.successGreeting("Thato"));
+        //     assert.equal("You have already been greeted", greetings2.successGreeting("Thato"));
+        // });
+
+   
+    });
+
+
 
 
 

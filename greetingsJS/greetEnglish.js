@@ -3,7 +3,8 @@ var helloPlusName = document.querySelector(".greetingAndName");
 var buttonForGreetMe = document.querySelector(".greetMeBtn");
 var counterRef = document.querySelector(".counter1")
 var emptyStringRef = document.querySelector(".greetingAndName1");
-var resetBtnRef = document.querySelector(".resetBtn")
+var resetBtnRef = document.querySelector(".resetBtn");
+var succesGreetingRef = document.querySelector(".succesGreeting");
 
 var count = 0;
 
@@ -40,7 +41,14 @@ function clearCounterArea() {
     counterRef.innerHTML = " ";
 }
 
+
+function clearSuccessGreeting() {
+    succesGreetingRef.innerHTML = " ";
+}
+
+
  var myVar;
+ var myVar1;
 
 function myFunction() {
     myVar = setTimeout(function () {
@@ -49,10 +57,17 @@ function myFunction() {
         , 2000);
 }
 
+function myFunction1() {
+    myVar1 = setTimeout(function () {
+        succesGreetingRef.innerHTML = null;
+    }
+        , 2000);
+}
 
 function greet() {
     var name = nameString.value;
     myFunction();
+    myFunction1();
     
     var radioBtnEng = document.querySelector("input[name='langRadioBtn']:checked");
 
@@ -72,12 +87,16 @@ function greet() {
 
         radioBtnEng.checked = false;
         emptyStringRef.classList.add('danger');  
-     emptyStringRef.innerHTML = greetingsInstance.errors(name,langValue);
+        emptyStringRef.innerHTML = greetingsInstance.errors(name,langValue);
+
      
         helloPlusName.innerHTML = greetingsInstance.greetings1(name,langValue)
+
         localStorage['names'] = JSON.stringify(namesGreeted);
         var list = Object.keys(dataFromLocal).length;
         counterRef.innerHTML = list;
+        succesGreetingRef.classList.add('success')
+        succesGreetingRef.innerHTML = greetingsInstance.successGreeting(name);
         
     }
 }
@@ -88,7 +107,6 @@ function reset() {
 
 
     localStorage.clear();
-    localStorage['spot'] = 0;
     location.reload();
 
     clearGreetingArea();
