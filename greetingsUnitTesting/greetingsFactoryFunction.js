@@ -67,7 +67,7 @@ function errors(name,langValue){
         }
         else {
 
-            return  "You have been succesfully greeted :)"; 
+            return  "You have been succesfully greeted"; 
        
         }
     }
