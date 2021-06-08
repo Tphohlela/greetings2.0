@@ -81,7 +81,7 @@ describe('Greetings factory function', function () {
         it('should return "you have been greeted sucessfully"', function () {
             let greetings2 = greetings();
 
-            assert.equal("You have been succesfully greeted :)", greetings2.successGreeting("Thato","English"));
+            assert.equal("You have been succesfully greeted", greetings2.successGreeting("Thato","English"));
         });
 
         it('should not return "you have been greeted sucessfully" because an empty input has been entered', function () {
